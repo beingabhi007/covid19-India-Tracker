@@ -3,6 +3,7 @@
 <head> 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162788971-2"></script>
+<script src="index.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -42,29 +43,7 @@
 <p id="text8"></p>
 <p></p>
 <script>
-    const url= 'https://api.covid19api.com/live/country/india/status/confirmed'; 
-
-    async function myData(){
-
-        const response=await fetch(url); 
-        const data= await response.json();  
-        console.log(data[1]);
-        const conf= data[data.length-1].Confirmed; 
-        const act= data[data.length-1].Active; 
-        const rec=data[data.length-1].Recovered; 
-        const dea=data[data.length-1].Deaths; 
-        
-
-        document.getElementById('text2').textContent=conf; 
-        document.getElementById('text4').textContent=act; 
-        document.getElementById('text6').textContent=rec; 
-        document.getElementById('text8').textContent=dea;
-        
-    } 
-
-   myData();  
-   setInterval(myData, 500);
-</script>    
+   </script>    
 <p id="text9">Made with <i class="fa fa-heart"></i> by <a href="http://abhisahu.epizy.com" target="_blank">ABHI SAHU</a></p>
 </body>
 </html>
