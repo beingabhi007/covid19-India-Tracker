@@ -1,0 +1,47 @@
+body 
+{
+    background-color: aliceblue;
+} 
+
+@media only screen and (max-width: 600px) 
+{
+    #text1,#text3,#text5,#text7
+    {
+        color: saddlebrown; 
+        font-size: 1.8em; 
+        font-weight: 800; 
+        text-align: center;
+    } 
+    #text2,#text4,#text6,#text8
+    {
+        color: tomato; 
+        font-size: 1.8em; 
+        font-weight: 800; 
+        text-align: center;
+    }
+} 
+
+
+
+@media only screen and (min-width: 992px) 
+{
+    #text1,#text3,#text5,#text7
+    {
+        color: saddlebrown; 
+        font-size: 2em; 
+        font-weight: 800; 
+        text-align: center;
+    } 
+    #text2,#text4,#text6,#text8
+    {
+        color: tomato; 
+        font-size: 2em; 
+        font-weight: 800; 
+        text-align: center;
+    }
+} 
+
+#text9 
+{
+    text-align: center;
+}

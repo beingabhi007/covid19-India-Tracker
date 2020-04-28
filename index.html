@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162788971-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162788971-2');
+</script>
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 India Tracker</title> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<link rel="stylesheet" href="index.css">
+</head>
+
+
+<body>
+ 
+
+<header class="card-header">
+    <h1 style="text-align: center;">Covid-19 India Tracker</h1>
+</header>  <br>
+
+<p id="text1">Confirmed Cases:</p>  
+<p id="text2"></p>
+<p id="text3">Active:</p> 
+<p id="text4"></p> 
+<p id="text5">Recovered:</p> 
+<p id="text6"></p>  
+<p id="text7">Death:</p> 
+<p id="text8"></p>
+<p></p>
+<script>
+    const url= 'https://api.covid19api.com/live/country/india/status/confirmed'; 
+
+    async function myData(){
+
+        const response=await fetch(url); 
+        const data= await response.json();  
+        console.log(data[1]);
+        const conf= data[data.length-1].Confirmed; 
+        const act= data[data.length-1].Active; 
+        const rec=data[data.length-1].Recovered; 
+        const dea=data[data.length-1].Deaths; 
+        
+
+        document.getElementById('text2').textContent=conf; 
+        document.getElementById('text4').textContent=act; 
+        document.getElementById('text6').textContent=rec; 
+        document.getElementById('text8').textContent=dea;
+        
+    } 
+
+   myData();  
+   setInterval(myData, 500);
+</script>    
+<p id="text9">Made with <i class="fa fa-heart"></i> by <a href="http://abhisahu.epizy.com" target="_blank">ABHI SAHU</a></p>
+</body>
+</html>
